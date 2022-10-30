@@ -1,0 +1,29 @@
+data_params:
+  data_path: data/heart_cleveland_upload.csv
+  numeric_features:
+    - age
+    - trestbps
+    - chol
+    - thalach
+    - oldpeak
+  categorical_features:
+    - sex
+    - cp
+    - fbs
+    - restecg
+    - exang
+    - slope
+    - ca
+    - thal
+  target: condition
+
+model_params:
+  model: lr
+  model_path: data/model
+  preprocessor_path: data/prep
+
+logging_params:
+  config_path: configs/logging.yaml
+  logger: main
+
+pred_path: data/predictions.csv
