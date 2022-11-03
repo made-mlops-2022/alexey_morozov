@@ -1,8 +1,7 @@
-from dataclasses import field
-
 from source.params.dataset_params import DataParams
-from source.params.model_params import *
+from source.params.model_params import ModelParams
 from source.params.logging_params import LoggingParams
+
 
 class PipeParams:
     data_params: DataParams

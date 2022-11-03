@@ -1,5 +1,6 @@
 data_params:
   data_path: data/heart_cleveland_upload.csv
+  val_data_path: data/heart_cleveland_upload.csv
   numeric_features:
     - age
     - trestbps
@@ -19,8 +20,8 @@ data_params:
 
 model_params:
   model: lr
-  model_path: data/model
-  preprocessor_path: data/prep
+  model_path: data/model/lr.pickle
+  preprocessor_path: data/model/lr_preprocessor.pickle
 
 logging_params:
   config_path: configs/logging.yaml
