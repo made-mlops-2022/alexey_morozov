@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ml-app-rolling-update
+  labels:
+    app: ml-app
+spec:
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: ml-app
+  template:
+    metadata:
+      name: ml-app-rolling-update
+      labels:
+        app: ml-app
+    spec:
+      containers:
+        - image: mikhailmar/online_inference:v1
+          name: ml-app
+          ports:
+            - containerPort: 8000
