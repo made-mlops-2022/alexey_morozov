@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: ml-app-replicaset
+  labels:
+    app: ml-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ml-app
+  template:
+    metadata:
+      name: ml-app-replicaset
+      labels:
+        app: ml-app
+    spec:
+      containers:
+        - image: mikhailmar/online_inference:v3
+          name: ml-app
+          ports:
+            - containerPort: 8000
