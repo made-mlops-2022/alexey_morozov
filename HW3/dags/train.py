@@ -7,7 +7,7 @@ with DAG(
     dag_id="preprocess_split_train_validate",
     default_args=DEFAULT_ARGS,
     description="DAG for generating data",
-    schedule_interval="@daily",
+    schedule_interval="@weekly",
     start_date=days_ago(7)
 ) as dag:
     preprocess = DockerOperator(
